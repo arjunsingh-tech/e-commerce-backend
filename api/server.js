@@ -5,15 +5,17 @@ import cors from "cors";
 
 const server = express();
 
-
 server.use(express.json());
 server.use(cors());
 
 
+server.get("/", (req, res) => {
+  res.send("API is working! Welcome to the E-commerce Backend!");
+});
+
 server.get("/hello", (req, res) => {
   res.send("Welcome to the E-commerce Backend!");
 });
-
 
 mongoose
   .connect(
@@ -26,8 +28,6 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-
 server.use("/auth", router);
-
 
 export default server;
