@@ -10,7 +10,7 @@ server.use(express.json());
 server.use(cors());
 
 
-server.get("/", (req, res) => {
+server.get("/hello", (req, res) => {
   res.send("Welcome to the E-commerce Backend!");
 });
 
